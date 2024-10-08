@@ -12,9 +12,12 @@ import java.util.List;
 
 public class StudyCafeFileHandler {
 
+    private static final String PASS_LIST_FILE = "src/main/resources/cleancode/studycafe/pass-list.csv";
+    private static final String LOCKER_PASS_LIST_FILE = "src/main/resources/cleancode/studycafe/pass-list.csv";
+
     public List<StudyCafePass> readStudyCafePasses() {
         try {
-            List<String> lines = Files.readAllLines(Paths.get("src/main/resources/cleancode/studycafe/pass-list.csv"));
+            List<String> lines = Files.readAllLines(Paths.get(PASS_LIST_FILE));
             List<StudyCafePass> studyCafePasses = new ArrayList<>();
             for (String line : lines) {
                 String[] values = line.split(",");
@@ -35,7 +38,7 @@ public class StudyCafeFileHandler {
 
     public List<StudyCafeLockerPass> readLockerPasses() {
         try {
-            List<String> lines = Files.readAllLines(Paths.get("src/main/resources/cleancode/studycafe/locker.csv"));
+            List<String> lines = Files.readAllLines(Paths.get(LOCKER_PASS_LIST_FILE));
             List<StudyCafeLockerPass> lockerPasses = new ArrayList<>();
             for (String line : lines) {
                 String[] values = line.split(",");
