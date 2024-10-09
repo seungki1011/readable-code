@@ -11,16 +11,21 @@ public class InputHandler {
 
     private static final Scanner SCANNER = new Scanner(System.in);
 
+    private static final String HOURLY_INPUT = "1";
+    private static final String WEEKLY_INPUT = "2";
+    private static final String FIXED_INPUT = "3";
+    private static final String LOCKER_SELECT_INPUT = "1";
+
     public StudyCafePassType getPassTypeSelectingUserAction() {
         String userInput = SCANNER.nextLine();
 
-        if ("1".equals(userInput)) {
+        if (HOURLY_INPUT.equals(userInput)) {
             return StudyCafePassType.HOURLY;
         }
-        if ("2".equals(userInput)) {
+        if (WEEKLY_INPUT.equals(userInput)) {
             return StudyCafePassType.WEEKLY;
         }
-        if ("3".equals(userInput)) {
+        if (FIXED_INPUT.equals(userInput)) {
             return StudyCafePassType.FIXED;
         }
         throw new AppException("잘못된 입력입니다.");
@@ -28,13 +33,15 @@ public class InputHandler {
 
     public StudyCafePass getSelectPass(List<StudyCafePass> passes) {
         String userInput = SCANNER.nextLine();
+
         int selectedIndex = Integer.parseInt(userInput) - 1;
         return passes.get(selectedIndex);
     }
 
     public boolean getLockerSelection() {
         String userInput = SCANNER.nextLine();
-        return "1".equals(userInput);
+
+        return LOCKER_SELECT_INPUT.equals(userInput);
     }
 
 }
