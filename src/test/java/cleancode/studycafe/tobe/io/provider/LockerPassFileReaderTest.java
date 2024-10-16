@@ -12,7 +12,7 @@ import cleancode.studycafe.tobe.provider.LockerPassProvider;
 
 class LockerPassFileReaderTest {
 	@Test
-	@DisplayName("정상적인 파일 경로로 사물함 패스를 읽어올 수 있어야 한다")
+	@DisplayName("사물함 패스를 파일에서 읽어올 수 있다")
 	void shouldReadLockerPassDetailsByAvailableFile() {
 		// given
 		LockerPassProvider lockerPassProvider = new LockerPassFileReader();
